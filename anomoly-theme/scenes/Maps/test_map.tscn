@@ -44,6 +44,8 @@ shader_parameter/shadow_thickness = 2.0
 stencil_flags = 2
 stencil_reference = 2
 
+[sub_resource type="SphereMesh" id="SphereMesh_v4f4u"]
+
 [node name="TestMap" type="Node3D" unique_id=1761175857]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1890841372]
@@ -89,3 +91,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.935663, 0.109031916, -0.357
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.34830356, 1.2714624, 0)
 mesh = SubResource("BoxMesh_v4f4u")
 surface_material_override/0 = SubResource("StandardMaterial3D_1384f")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=1610737252]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.233996, 1.1681917, 0)
+mesh = SubResource("SphereMesh_v4f4u")
