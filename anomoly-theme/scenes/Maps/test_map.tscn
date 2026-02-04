@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cbu5f88qqjqf6"]
 
 [ext_resource type="Script" uid="uid://bildjtymdqcl" path="res://scripts/character_movement.gd" id="1_1mb8j"]
+[ext_resource type="PackedScene" uid="uid://b65mn5dcqnd4m" path="res://assets/SciFi_Modular_Kit_Demo/Meshes/sm_Door_A_03.fbx" id="2_5wqee"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1mb8j"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -20,7 +21,10 @@ glow_enabled = true
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_5wqee"]
 points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v4f4u"]
+
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_v4f4u"]
+material = SubResource("StandardMaterial3D_v4f4u")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1sphd"]
 
@@ -55,3 +59,6 @@ shape = SubResource("CapsuleShape3D_1sphd")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1970039355]
 transform = Transform3D(1, 0, 0, 0, 0.91732436, 0.3981408, 0, -0.3981408, 0.91732436, 0, 4.5834565, 10.099812)
+
+[node name="sm_Door_A_03" parent="." unique_id=968202689 instance=ExtResource("2_5wqee")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.935663, 0.109031916, -0.3575368)
