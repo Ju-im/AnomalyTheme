@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://cc1cdgletv41o"]
+
+[ext_resource type="PackedScene" uid="uid://bul751txaknln" path="res://scenes/assets/sm_column_a_01.tscn" id="2_0t5xc"]
+[ext_resource type="PackedScene" uid="uid://dt6kusc10h1mh" path="res://scenes/assets/sm_floor_a_00.tscn" id="3_0t5xc"]
+[ext_resource type="PackedScene" uid="uid://6snpfq6djlqs" path="res://scenes/assets/sm_wall_straight_a_01.tscn" id="3_okjgp"]
+
+[node name="Hallway" type="Node3D" unique_id=278065982]
+
+[node name="sm_Wall_Straight_A_01" parent="." unique_id=1019226458 instance=ExtResource("3_okjgp")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.7449194, -0.6978649, 0)
+
+[node name="sm_Column_A_01" parent="." unique_id=1917912516 instance=ExtResource("2_0t5xc")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.3536824, -0.7940507, -3.7293835)
+
+[node name="Floors" type="Node3D" parent="." unique_id=671809502]
+
+[node name="sm_Floor_A_00" parent="Floors" unique_id=105798262 instance=ExtResource("3_0t5xc")]
+
+[node name="sm_Floor_A_02" parent="Floors" unique_id=1384859328 instance=ExtResource("3_0t5xc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+
+[node name="sm_Floor_A_05" parent="Floors" unique_id=921520815 instance=ExtResource("3_0t5xc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00095653534, 0, -2)
+
+[node name="sm_Floor_A_06" parent="Floors" unique_id=1534508019 instance=ExtResource("3_0t5xc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00095653534, 0, -4)
+
+[node name="sm_Floor_A_03" parent="Floors" unique_id=1391126789 instance=ExtResource("3_0t5xc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+
+[node name="sm_Floor_A_01" parent="Floors" unique_id=1726993663 instance=ExtResource("3_0t5xc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="sm_Floor_A_04" parent="Floors" unique_id=1988367197 instance=ExtResource("3_0t5xc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 2)

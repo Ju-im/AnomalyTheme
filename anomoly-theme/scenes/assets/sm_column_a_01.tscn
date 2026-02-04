@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bul751txaknln"]
+
+[ext_resource type="PackedScene" uid="uid://c4lwn8pq8x2st" path="res://assets/SciFi_Modular_Kit_Demo/Meshes/sm_Column_A_01.fbx" id="1_14tv7"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_1diab"]
+points = PackedVector3Array(0.53375006, -0.04124999, -0.23367368, 1, 1.9482778, 0.23113194, 0.5836567, 1.9534484, 0.2324246, 0.56633914, 2.03875, -0.26625, 1, 0.049222123, -0.24363199, 1, 0.049222123, 0.23113194, 1, 1.9482778, -0.24363199, 0.55319405, 0.04171904, 0.20307708, 0.53375006, 2.03875, -0.23367368, 0.56633914, -0.04124999, -0.26625, 0.55319405, 1.9557809, 0.20307708, 0.5836567, 0.044051472, 0.2324246)
+
+[node name="sm_Column_A_01" unique_id=1917912516 instance=ExtResource("1_14tv7")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Column_A_01" parent_id_path=PackedInt32Array(1134350645) index="0" unique_id=68822379]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Column_A_01/StaticBody3D" index="0" unique_id=1523810285]
+shape = SubResource("ConvexPolygonShape3D_1diab")

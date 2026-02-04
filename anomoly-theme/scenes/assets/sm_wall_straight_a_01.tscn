@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://6snpfq6djlqs"]
+
+[ext_resource type="PackedScene" uid="uid://dsyw3uepyarjv" path="res://assets/SciFi_Modular_Kit_Demo/Meshes/sm_Wall_Straight_A_01.fbx" id="1_ppm3w"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ronf3"]
+points = PackedVector3Array(0.9991071, 1.9996084, 1, 0.684127, -0.015475273, -1.0158731, 0.9991071, 0.00039158572, -1, 0.684127, -0.015475273, 1.0158731, 0.7, 1.9139278, -0.9142858, 0.9991071, 1.9996084, -1, 0.9991071, 0.00039158572, 1, 0.7, 1.9139278, 0.9142858)
+
+[node name="sm_Wall_Straight_A_01" unique_id=1019226458 instance=ExtResource("1_ppm3w")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+
+[node name="Wall_Straight_A_01" parent="." index="0" unique_id=1668588075]
+transform = Transform3D(1, 0, 7.549791e-08, 0, 1, 0, -7.549791e-08, 0, 1, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall_Straight_A_01" index="0" unique_id=1457838493]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall_Straight_A_01/StaticBody3D" index="0" unique_id=1753401268]
+shape = SubResource("ConvexPolygonShape3D_ronf3")

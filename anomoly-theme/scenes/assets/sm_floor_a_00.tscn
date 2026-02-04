@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dt6kusc10h1mh"]
+
+[ext_resource type="PackedScene" uid="uid://bh6jk8qsvcb3s" path="res://assets/SciFi_Modular_Kit_Demo/Meshes/sm_Floor_A_00.fbx" id="1_hwaft"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_hwaft"]
+points = PackedVector3Array(-1.015873, -0.26584506, -1.0158731, 1.015842, 0.019813314, 1.0158731, 1.015842, -0.26584506, 1.0158731, 1.015842, 0.019813314, -1.0158731, -1.015873, 0.019813314, 1.0158731, -1.015873, -0.26584506, 1.0158731, 1.015842, -0.26584506, -1.0158731, -1.015873, 0.019813314, -1.0158731)
+
+[node name="sm_Floor_A_00" unique_id=105798262 instance=ExtResource("1_hwaft")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor_A_00" parent_id_path=PackedInt32Array(60780098) index="0" unique_id=1295335505]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor_A_00/StaticBody3D" index="0" unique_id=2002993020]
+shape = SubResource("ConvexPolygonShape3D_hwaft")

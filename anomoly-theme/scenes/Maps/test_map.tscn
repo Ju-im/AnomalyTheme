@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bildjtymdqcl" path="res://scripts/character_movement.gd" id="1_1mb8j"]
 [ext_resource type="PackedScene" uid="uid://b65mn5dcqnd4m" path="res://assets/SciFi_Modular_Kit_Demo/Meshes/sm_Door_A_03.fbx" id="2_5wqee"]
 [ext_resource type="Shader" uid="uid://bw4u0sgm6m8fe" path="res://shaders/Outline.gdshader" id="2_v4f4u"]
+[ext_resource type="PackedScene" uid="uid://cc1cdgletv41o" path="res://scenes/assets/hallway.tscn" id="4_1sphd"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1mb8j"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -31,20 +32,13 @@ material = SubResource("StandardMaterial3D_v4f4u")
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1sphd"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_v4f4u"]
+size = Vector2(2, 2)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1sphd"]
 render_priority = 0
 shader = ExtResource("2_v4f4u")
 shader_parameter/shadow_color = Color(0, 0, 0, 1)
 shader_parameter/shadow_thickness = 2.0
-
-[sub_resource type="BoxMesh" id="BoxMesh_v4f4u"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1384f"]
-stencil_flags = 2
-stencil_reference = 2
-
-[sub_resource type="SphereMesh" id="SphereMesh_v4f4u"]
 
 [node name="TestMap" type="Node3D" unique_id=1761175857]
 
@@ -64,34 +58,31 @@ mesh = SubResource("BoxMesh_lhnvv")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=1328966704]
 shape = SubResource("ConvexPolygonShape3D_5wqee")
 
-[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=350142824]
+[node name="Player" type="CharacterBody3D" parent="." unique_id=350142824]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1112473, 0, -2.4861498)
 script = ExtResource("1_1mb8j")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D" unique_id=774358210]
+[node name="Visuals" type="MeshInstance3D" parent="Player" unique_id=774358210]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 mesh = SubResource("CapsuleMesh_v4f4u")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=88702090]
+[node name="Collider" type="CollisionShape3D" parent="Player" unique_id=88702090]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_1sphd")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="CharacterBody3D" unique_id=875771276]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4975095, 5.0547705)
+[node name="Head" type="Node3D" parent="Player" unique_id=2098331493]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Player/Head" unique_id=1970039355]
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Player/Head/Camera3D" unique_id=875771276]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.45990133)
+extra_cull_margin = 16384.0
 mesh = SubResource("QuadMesh_v4f4u")
 surface_material_override/0 = SubResource("ShaderMaterial_1sphd")
-
-[node name="Camera3D" type="Camera3D" parent="CharacterBody3D" unique_id=1970039355]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4975095, 5.514672)
 
 [node name="sm_Door_A_03" parent="." unique_id=968202689 instance=ExtResource("2_5wqee")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.935663, 0.109031916, -0.3575368)
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=222940841]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.34830356, 1.2714624, 0)
-mesh = SubResource("BoxMesh_v4f4u")
-surface_material_override/0 = SubResource("StandardMaterial3D_1384f")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=1610737252]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.233996, 1.1681917, 0)
-mesh = SubResource("SphereMesh_v4f4u")
+[node name="Hallway" parent="." unique_id=278065982 instance=ExtResource("4_1sphd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, -10.273609)
